@@ -1,0 +1,11 @@
+<mat-toolbar class="controls">
+  <label> Upload
+    <input type="file" #file (change)="onUploadImage($event)">
+  </label>
+  <p></p>
+  <button mat-raised-button color="primary" (click)="onSaveLemmas()">Save</button>
+</mat-toolbar>
+<div *ngIf="figure" class="container">
+  <fl-figure [figure]="figure"></fl-figure>
+  <fl-lemma [lemmas]="figure.lemmas"></fl-lemma>
+</div>

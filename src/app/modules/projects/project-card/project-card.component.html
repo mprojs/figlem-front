@@ -1,0 +1,11 @@
+<mat-card [routerLink]="['./', project.id]" class="card">
+  <div class="card__header">
+    <h4 class="card__title">{{project.title}}</h4>
+    <div class="card-buttons">
+      <button mat-mini-fab class="btn-card"><mat-icon>visibility</mat-icon></button>
+      <button mat-mini-fab class="btn-card"><mat-icon>delete</mat-icon></button>
+    </div>
+  </div>
+  <p>{{project.desc}}</p>
+
+</mat-card>

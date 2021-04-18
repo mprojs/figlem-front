@@ -1,0 +1,43 @@
+<div class="list-legend" id="list" (drop)="drop($event)"
+          (dragover)="allowDrop($event)"
+          (dragenter)="dragEnter($event)"
+          (dragleave)="dragLeave($event)"
+          [attr.data-group-index]="'main'">
+  <button (click)="onAddGroup()" mat-raised-button>Add group</button>
+  <div class="list">
+    <div class="list__item-wrap" *ngFor="let lemma of lemmas; index as i">
+      <label draggable="true" class="list__item"
+             (dragstart)="onDrag($event)"
+             (drop)="drop($event)" (dragover)="allowDrop($event)" (dragenter)="dragEnter($event)"
+             (dragleave)="dragLeave($event)"
+             [attr.data-group-index]="i"
+             id="{{i}}">
+        {{lemma.index}}
+        <input type="text" [(ngModel)]="lemma.value"
+               (click)="onSelectedLemma(i)"
+               (blur)="lossOfFocus(i)"
+        >
+        <span class="list__button" (click)="onDeleteLemma(i)"><mat-icon>close</mat-icon></span>
+      </label>
+
+      <ng-container *ngIf="lemma.children">
+        <div *ngFor="let child of lemma.children; index as j">
+          <label class="child" draggable="true"
+                 [attr.data-group-index]="i"
+                 [attr.data-child-index]="j"
+                 id="{{i}},{{j}}"
+                 (dragstart)="onDrag($event)"
+                 (drop)="drop($event)" (dragover)="allowDrop($event)" (dragenter)="dragEnter($event)"
+                 (dragleave)="dragLeave($event)">
+            {{child.index}}
+            <input type="text" [(ngModel)]="child.value"
+                   (click)="onSelectedLemma(i,j)"
+                   (blur)="lossOfFocus(i,j)"
+            >
+            <span class="list__button" (click)="onDeleteChild(i,j)"><mat-icon>close</mat-icon></span>
+          </label>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 2px #cf844f;
+  margin: 1rem;
+  font-size: 1.1rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+  }
+  &__title {
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+}
+
+.card-buttons {
+  display: flex;
+}
+
+.btn-card {
+  box-shadow: 2px 2px 3px #cf844f;
+  margin: 0 10px;
+}

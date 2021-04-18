@@ -1,0 +1,33 @@
+.project {
+  padding: 1rem;
+  &__title {
+    font-size: 1.5rem;
+  }
+}
+
+.project-list {
+  font-size: 0.75rem;
+}
+
+.project-list__item {
+  border: 1px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  & span {
+    display: inline-block;
+    //width: 20%;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    outline: none;
+
+    &:nth-child(2) {
+      flex: 1;
+    }
+  }
+  & mat-icon {
+    cursor: pointer;
+  }
+}
+
+.btn-create {
+  margin: 1rem 0;
+}

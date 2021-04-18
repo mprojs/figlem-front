@@ -1,0 +1,20 @@
+<div class="image-container" #image (click)="onEventClickImage($event, image)">
+  <img [src]="figure.imageUrl" alt="">
+  <div class="labels">
+    <div *ngFor="let lemma of figure.lemmas">
+      <div class="label"
+           [ngStyle]="{'top': lemma.offsetY + '%', 'left': lemma.offsetX + '%'}"
+           [ngClass]="lemma.isActive ? 'active' : ''">
+        {{lemma.index}}
+      </div>
+      <ng-container *ngIf="lemma.children">
+        <div class="label" *ngFor="let child of lemma.children"
+             [ngStyle]="{'top': child.offsetY + '%', 'left': child.offsetX + '%'}"
+             [ngClass]="child.isActive ? 'active' : ''">
+          {{child.index}}
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+

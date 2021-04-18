@@ -1,0 +1,8 @@
+<div class="project-wrap">
+  <div class="controls">
+    <button mat-raised-button color="accent"> + Add project</button>
+  </div>
+  <div class="list">
+    <fl-project-card *ngFor="let project of projectService.projects$ | async" [project]="project"></fl-project-card>
+  </div>
+</div>

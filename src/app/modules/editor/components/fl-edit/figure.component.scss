@@ -1,0 +1,39 @@
+:host {
+  flex: 1;
+  height: 100%;
+}
+.image-container {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: 1px 1px 5px 1px rgba(183, 72, 41, 0.2) inset;
+  padding: 2px;
+  & img {
+    object-fit: contain;
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+}
+
+.label {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  color: white;
+  background-image: linear-gradient(to top, rgb(101, 115, 255), rgb(122, 113, 238), rgb(143, 112, 220), rgb(164, 110, 203), rgb(185, 109, 185), rgb(206, 107, 168), rgb(178, 95, 146), rgb(149, 83, 124), rgb(121, 71, 102), rgb(93, 59, 79), rgb(64, 47, 57), rgb(36, 35, 35));
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+  cursor: pointer;
+  &.active {
+    background-image: linear-gradient(to top, rgb(236, 116, 68), rgb(222, 123, 84), rgb(220, 164, 112), rgb(203, 152, 110), rgb(185, 109, 185), rgb(206, 107, 168), rgb(178, 95, 146), rgb(149, 83, 124), rgb(121, 71, 102), rgb(93, 59, 79), rgb(64, 47, 57), rgb(36, 35, 35));
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+}
+
+

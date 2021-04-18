@@ -1,0 +1,15 @@
+<div *ngIf="projectService.project$ | async as project" class="project">
+  <h4 class="project__title">Project: {{project.title}}</h4>
+  <p class="project__description">{{project.desc}}</p>
+  <h6 class="project-list">Figures:</h6>
+  <button mat-raised-button [routerLink]="['/editor', project.id]" class="btn-create">Create figure</button>
+  <div *ngFor="let figure of project.figures"
+       class="project-list__item">
+    <span>{{figure.id}}</span>
+    <span>{{figure.title}}</span>
+    <span>{{figure.createdAt| date:'dd.MM.yyyy'}}</span>
+    <span>{{figure.updatedAt| date:'dd.MM.yyyy'}}</span>
+    <span [routerLink]="['/editor', project.id, figure.id]"><mat-icon>visibility</mat-icon></span>
+    <span (click)="onRemoveFigure(figure.id, project.id)"><mat-icon>delete</mat-icon></span>
+  </div>
+</div>
