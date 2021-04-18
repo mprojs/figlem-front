@@ -1,18 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {filter, mergeMap} from 'rxjs/operators';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'fl-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'FigLem';
 
   constructor() {}
-
-  ngOnInit() {
-
-  }
 }
